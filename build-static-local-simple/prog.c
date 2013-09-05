@@ -4,9 +4,9 @@ void ctest2(int *);
 
 int main()
 {
-   int x;
-   ctest1(&x);
-   printf("Valx=%d\n",x);
+	int x;
+	ctest1(&x);
+	printf("Valx=%d\n", x);
 
-   return 0;
+	return 0;
 }

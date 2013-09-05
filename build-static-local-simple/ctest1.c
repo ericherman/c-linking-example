@@ -1,4 +1,4 @@
-void ctest1(int *i)
+ void ctest1(int *i)
 {
-   *i=5;
+	*i = 5;
 }
