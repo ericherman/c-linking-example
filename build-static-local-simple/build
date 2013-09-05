@@ -1,0 +1,18 @@
+#!/bin/bash
+set -e
+if [ "__$1__" == "__-v__" -o "__$1__" == "__--verbose__" ]; then
+VERBOSE="-v"
+set -x
+fi
+# Compile: (-Wall: include warnings.)
+gcc -c -Wall ctest1.c ctest2.c
+# Create library "libctest.a":
+ar -cvsq libctest.a ctest1.o ctest2.o
+# List files in library:
+ar -t libctest.a
+# creat the object file of the program
+gcc -c -Wall prog.c
+# Link the executable with the library
+gcc prog.o libctest.a -o prog
+# run the executable
+./prog

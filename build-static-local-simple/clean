@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+if [ "__$1__" == "__-v__" -o "__$1__" == "__--verbose__" ]; then
+VERBOSE="-v"
+set -x
+fi
+rm $VERBOSE *.o *.a prog
