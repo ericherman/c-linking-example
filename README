@@ -1,6 +1,41 @@
 Simple demo of linking with gcc tools
+========
 
+* static-local-easy
+
+This is the simplest example of how to create a library for static
+linking and then create an executable which links with it.
+
+One might use a setup like this if the library were intended to be
+used only locally to a project.
+
+There is no Makefile included, just a simple "./build" script.
+ (add a "-v" for verbose output)
+
+* static-local-makefile
+
+This is a simple re-write of the "build" and "clean" scripts from
+static-local-easy using a Makefile.
+
+* static
+
+This is a slightly more typical static library. Really the only
+difference here is the addition of a header file and the need to
+add the include directory to the "-I" parameter for gcc.
+
+* dynamic
+
+This creates a shared object with Position Independent Code, then
+creates an executable which dynamically links against the object.
+
+Notice the LD_LIBRARY_PATH, which is not platform independent.
+If you are on GNU/Linux system, try:
+"make clean; make && make check"
+
+LICENSE:
+========
 This is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
 License as published by the Free Software Foundation; either
 version 2.1 of the License, or (at your option) any later version.
+
