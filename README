@@ -28,8 +28,8 @@ add the include directory to the "-I" parameter for gcc.
 This creates a shared object with Position Independent Code, then
 creates an executable which dynamically links against the object.
 
-Notice the LD_LIBRARY_PATH, which is not platform independent.
-If you are on GNU/Linux system, try:
+Notice the LD_LIBRARY_PATH and the -soname, which are not platform
+independent. If you are on GNU/Linux system, try:
 "make clean; make && make check"
 
 LICENSE:
