@@ -1,9 +1,9 @@
 /* ctest.h */
-#ifndef _CTEST_H_
-#define _CTEST_H_
+#ifndef CTEST_H
+#define CTEST_H
 
 void ctest1(int *);
 void ctest2(int *);
 
-#endif /* _CTEST_H_ */
+#endif /* CTEST_H */
 /* end ctest.h */
