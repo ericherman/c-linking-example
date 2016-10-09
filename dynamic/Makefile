@@ -9,7 +9,8 @@ OBJ=prog.o
 OUT=prog
 
 CFLAGS=-Wall
-LDFLAGS=-L. -lctest
+LDFLAGS=-L.
+LDADD=-lctest
 CC=gcc
 
 default: $(OUT)
@@ -24,7 +25,7 @@ $(SO_NAME): $(LIB_OBJ)
 
 $(OUT): $(SO_NAME)
 	$(CC) -c $(INCLUDES) $(CFLAGS) $(SRC) -o $(OBJ)
-	$(CC) $(OBJ) $(LDFLAGS) -o $(OUT)
+	$(CC) $(OBJ) $(LDFLAGS) -o $(OUT) $(LDADD)
 
 check: $(OUT)
 	LD_LIBRARY_PATH=. ./$(OUT)

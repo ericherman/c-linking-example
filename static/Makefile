@@ -8,7 +8,8 @@ OBJ=prog.o
 OUT=prog
 
 CFLAGS=-Wall
-LDFLAGS=-L. -lctest
+LDFLAGS=-L.
+LDADD=-lctest
 CC=gcc
 
 default: $(OUT)
@@ -22,7 +23,7 @@ $(LIB_OUT): $(LIB_OBJ)
 
 $(OUT): $(LIB_OUT)
 	$(CC) -c $(INCLUDES) $(CFLAGS) $(SRC) -o $(OBJ)
-	$(CC) $(OBJ) $(LDFLAGS) -o $(OUT)
+	$(CC) $(OBJ) $(LDFLAGS) -o $(OUT) $(LDADD)
 
 check: $(OUT)
 	./$(OUT)
